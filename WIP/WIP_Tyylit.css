@@ -1,4 +1,4 @@
-
+/* viesti meni perille */
 /* määritellään taustan ja koko sivustoon vaikuttavia parametrejä */
 @font-face {
     font-family: 'ClashGrotesk-Variable';
@@ -652,9 +652,6 @@ background-color: var(--accent-color);
     .footer-container{
         height: 30vh;
         margin-bottom: 5.1rem;
-    }
-    #footer2{
-      
     }
 
     #big_text{
