@@ -1,0 +1,663 @@
+
+/* määritellään taustan ja koko sivustoon vaikuttavia parametrejä */
+@font-face {
+    font-family: 'ClashGrotesk-Variable';
+    src: url('..WIP/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
+         url('..WIP/fonts/ClashGrotesk-Variable.woff') format('woff'),
+         url('..WIP/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+
+
+/* @import url('fonts/clash-grotesk.css'); */
+:root{
+    font-size: 17px;
+    /* font-family: 'ClashGrotesk-Variable'; */
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+    -webkit-scroll-padding-top: 1rem;
+    scroll-padding-top: 1rem;
+
+    --bg-primary: hsl(0, 0%, 11%);
+    --bg-secondary:hsl(0, 0%, 9%);
+    --text-primary: hsl(0, 0%, 85%);
+    --text-secondary: hsl(0, 0%, 97%);
+    --accent-color:rgb(235, 85, 51);
+    --x-gradient:linear-gradient(90deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
+    --y-gradient: linear-gradient(180deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
+    --y-gradient-inverted: linear-gradient(0,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
+    --shadow-primary:0px 0px 7px 3px rgba(0, 0, 0, 0.4);
+    --gradient-darken: linear-gradient(180deg, hsl(0, 0%, 11%, 0.1), hsl(0, 0%, 5%, 0.8));
+    --gradient-darken-over:linear-gradient(180deg, hsl(0, 0%, 5%, 0.8), hsl(0, 0%, 5%, 0.8));
+    
+    --widescreen-margin:0 15%;
+}
+
+body{
+    color: var(--text-primary);
+    font-family: 'ClashGrotesk-Variable';
+    background-color: var(--bg-primary);
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+}
+
+main{
+    margin-left: 5rem;
+    padding: 0rem 0rem;
+
+}
+
+ul{
+    list-style: none;
+}
+
+.textbox{
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+}
+
+#big_text{
+    color: var(--accent-color);
+    /* font-size: 8rem; */
+    margin: 0;
+    font-weight: 500;
+}
+
+.navbar{
+    position: fixed;
+    bottom: 0;
+    background-color: var(--bg-primary);
+    transition: 0.3s ease-in-out;
+    z-index: 100;
+}
+
+.navbar-nav{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.link-text{
+    display: none;
+}
+.nav-item{
+    width: 100%;
+}
+
+.nav-item:last-child{
+    margin-top: auto;
+    width: 60%;
+    padding-bottom: 2rem; 
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    height: 6rem;
+    color: var(--text-secondary); 
+    text-decoration: none;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+
+
+
+/* homepagen väsäämistä */
+
+.container{
+    display: grid;
+    height: 300vh;
+    /* grid-template-columns:minmax(0.2fr, 0.3fr) minmax(0.4fr, 0.6fr); */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr 90vh;
+
+    grid-template-areas: 
+    "header1 header1 header1"
+    "headerBelow1 headerBelow1 headerBelow1"
+    "box1 box2 box2"
+    "box3 box4 box4";
+    column-gap: 1.5vw;
+    row-gap: 1.5vw;
+    padding-right: 1rem;
+    padding: 1rem;
+    padding-left: 1rem;
+}
+
+
+
+
+.boxes{
+    border-radius: 1rem;
+    padding-top: 1rem;
+    /* box-shadow: 0px 0px 7px 3px rgba(0, 0, 0, 0.4); */
+}
+
+#header1{
+    grid-area: header1;
+    background: var(--bg-primary);
+}
+
+#headerBelow1{
+    grid-area: headerBelow1;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.h2-title{
+    position: relative;
+    left: 5%;
+    font-weight: 300;
+}
+
+h2{
+    font-weight: 500;
+}
+
+/* ----BOXIT----- */
+
+.boxes{
+    perspective: 2px;}
+
+#box1{
+    grid-area: box1;
+    background-image: var(--gradient-darken),url(kuvat/drive/Profile.png);
+    box-shadow: var(--shadow-primary);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#box2{
+    grid-area: box2;
+}
+
+#box3{
+    grid-area: box3;
+    background: transparent;
+}
+
+#box4{
+    grid-area: box4;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: var(--shadow-primary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-image: url(kuvat/Whangaehu.svg);
+    background-size: 400%;    
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* portfolio-osion kuvaboxit */
+.portfolio-container{
+    display: grid;
+    height: 400vh;
+    grid-template-columns: 1fr 1.2fr;
+    grid-template-rows: 1.1fr 1.1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "img_box1-text img_box1"
+    "img_box2 img_box2-text"
+    "img_box3 img_box3"
+    "img_box4-text img_box4"
+    "img_box5-text img_box5";
+
+    row-gap: 1.5vw;
+    padding-right: 1rem;
+    padding: 1rem;
+    padding-left: 1rem;
+}
+
+#img_box1{
+    grid-area: img_box1;
+    background-image: url(kuvat/drive/aatu1.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+#img_box1-text{
+    grid-area: img_box1-text;
+}
+
+#img_box2{
+    grid-area: img_box2;
+    background-image: url(kuvat/drive/Speed.png);
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+#img_box2-text{
+    grid-area: img_box2-text;
+}
+
+#img_box3{
+    grid-area: img_box3;
+    background-image: url(kuvat/Joutsenet_medium.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#img_box3-text{
+    grid-area: img_box3-text;
+}
+
+#img_box4{
+    grid-area: img_box4;
+    background-image: url(kuvat/drive/lehti.png);
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+#img_box4-text{
+    grid-area: img_box4-text;
+    margin-right: 1rem;
+    background-image: url(kuvat/drive/sumea_lehti.png);
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+#img_box5{
+    grid-area: img_box5;
+    background-image: url(kuvat/drive/ikkuna.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#img_box5-text{
+    grid-area: img_box5-text;
+}
+
+/* contact osion boxi */
+.contact-container{
+    display: grid;
+    height: 90vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    grid-template-areas: 
+    "contact_box";
+
+    padding: 0rem;
+}
+
+
+#contact_box{
+    grid-area: contact_box;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    /* background-color: var(--bg-primary); */
+    background-repeat: no-repeat;
+    background-size: 400%;
+    background-position: center;
+    background-image: var(--gradient-darken-over),url(kuvat/Clarence.svg);
+    /* box-shadow: var(--shadow-primary);
+    border: 1px solid rgba(255, 255, 255, 0.05); */
+    z-index: 0;
+}
+
+#contact_box h2{
+    text-align: center;
+}
+
+#contact_box p{
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.button{
+    position:relative;
+    display:flex;
+    align-self: center;
+    justify-self: center;
+    font-size:1.458vw;
+    font-weight:300;
+    padding:.5vw 1.778vw;
+    overflow:hidden;
+    white-space:nowrap;
+    -webkit-transform:translateZ(0);
+    -moz-transform:translateZ(0);
+    transform:translateZ(0);
+    width:-moz-fit-content;
+    background: var(--bg-primary);
+    color:var(--text-primary);
+    cursor:pointer;
+    border-radius:2.083vw;
+    border:1px solid var(--accent-color);
+    -webkit-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
+    -moz-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
+    transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
+    z-index: 10;
+}
+
+.button::before{
+    content:"";
+    width:100%;
+    height:100%;
+    display:block;
+    position:absolute;
+    left:0;
+    top:0;
+    background:var(--x-gradient);
+    opacity:0;
+    -webkit-transition:opacity .3s cubic-bezier(.28,.44,.49,1),-webkit-transform .3s cubic-bezier(.28,.44,.49,1);
+    transition:opacity .3s cubic-bezier(.28,.44,.49,1),-webkit-transform .3s cubic-bezier(.28,.44,.49,1);
+    -moz-transition:transform .3s cubic-bezier(.28,.44,.49,1),opacity .3s cubic-bezier(.28,.44,.49,1),-moz-transform .3s cubic-bezier(.28,.44,.49,1);
+    transition:transform .3s cubic-bezier(.28,.44,.49,1),opacity .3s cubic-bezier(.28,.44,.49,1);
+    transition:transform .3s cubic-bezier(.28,.44,.49,1),opacity .3s cubic-bezier(.28,.44,.49,1),-webkit-transform .3s cubic-bezier(.28,.44,.49,1),-moz-transform .3s cubic-bezier(.28,.44,.49,1);
+    border-radius:2.083vw;
+    z-index:-1;
+}
+
+.button:hover{
+    border-color: transparent;
+}
+
+.button:hover:before{
+    opacity: 1;
+}
+
+
+.footer-container{
+    display: grid;
+    height: 30vh;
+    max-height: 30vh;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "footer1 footer2 footer3";
+    padding: 0rem 0rem;
+
+}
+
+
+#footer1{
+    grid-area: footer1;
+    background-color: var(--bg-primary);
+    display: flex;
+}
+
+#footer2{
+    grid-area: footer2;
+    background-color: var(--bg-primary);
+    display: flex;
+    box-sizing: content-box;
+    flex-direction: row;
+    border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
+    ulottuu. "top | right | bottom | left" */
+    border-image-width: 1px;
+    border-image: var(--y-gradient-inverted) 1;
+    border-left: 1px solid black;
+}
+
+#footer3{
+    grid-area: footer3;
+    background-color: var(--bg-primary);
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
+    ulottuu. "top | right | bottom | left" */
+    border-image-width: 1px;
+    border-image: var(--y-gradient-inverted) 1;
+    border-left: 1px solid black;
+}
+
+.footer
+
+.socials a{
+    list-style: none;
+}
+
+/*------- linkkien yms muotoilu ALKAA -----------*/
+.link, a{
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.footer-logo-box{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#footer_logo{
+    width: 6rem;
+}
+
+
+
+/* -----------VIIVAT MAIN MUOTOILU ---------*/
+.viiva-wrapper{
+position: fixed;
+height: 100%;
+width: 100vw;
+top: 0;
+pointer-events: none;
+user-select: none;
+z-index: -1;
+}
+
+.viivat_alas{
+display: block;
+width: 1px;
+height: 100%;
+position: absolute;
+background-color: var(--accent-color);
+}
+
+/* .viivat_alas.viiva1{
+    left: 5%;
+} */
+.viivat_alas.viiva2{
+    left: 31%;
+}
+
+
+
+/* media isoille näytöille */
+@media only screen and (min-width: 1920px){
+    .container{
+        margin: var(--widescreen-margin);
+    }
+
+    .footer-container{
+        margin:var(--widescreen-margin)
+    }
+
+    .viivat_alas.viiva1{
+        margin: var(--widescreen-margin);
+    }
+    .viivat_alas.viiva2{
+        left: 22%;
+        margin: var(--widescreen-margin);
+    }
+
+    .h2-title{
+        left: 8%;
+    }
+}
+
+@media only screen and (min-width: 950px){
+    
+
+    .navbar{
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+        border-image: var(--y-gradient) 1;
+        border-image-outset: 5px 0px 5px 5px; /* kuinka paljon nav:in "yli" border 
+        ulottuu. "top | right | bottom | left" */
+        border-image-width: 1px;
+        border-right: 1px solid white;
+    }
+    .nav-link{
+        opacity: 0.2;
+    }
+
+    .nav-link:hover{
+        background-image: linear-gradient(to top, hsl(0, 0%, 10%), hsl(0, 0%, 11%));
+    }
+
+    #nav_logo{
+        filter: grayscale(100%);
+        transition: 0.5s;
+    }
+    
+    .navbar:hover .nav-link{
+        opacity: 1;
+    }
+    .navbar:hover{
+        width: 10rem;
+    }
+
+    .navbar:hover #nav_logo{
+        filter: grayscale(0%);
+    }
+    
+    .nav-item::after{
+        content: '';
+        width: 0%;
+        height: 1px;
+        background-image: var(--x-gradient);
+        display: block;
+        margin: auto;
+        transition: 0.2s ease-in;
+    }
+    
+    .nav-item:hover::after{
+        background-image: var(--x-gradient);
+        width: 100%;
+    }
+    .nav-item:last-child:hover::after{
+        width: 0%;
+    }
+
+    #big_text{
+        font-size: 13rem;
+        line-height: 50%;
+        transition: 0.5s;
+    }
+
+    #big_text{
+        line-height: 100%;
+    }
+}
+
+/* media pienille näytöille */
+@media only screen and (max-width: 950px){
+    .navbar{
+        position: fixed;
+        bottom: 0;
+        margin-bottom: 0;
+        width: 100vw;
+        height: 5rem;
+        border-image: var(--x-gradient) 100;
+        border-top: 1px solid white;
+        border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
+        ulottuu. "top | right | bottom | left" */
+    }
+
+    .nav-item:last-child{
+        display: none;
+    }
+
+    .navbar-nav{
+        flex-direction: row;
+    }
+
+    .nav-link{
+        justify-content: center;
+        height: 5rem;
+    }
+
+    main{
+        margin: 0;
+    }
+
+    .viivat_alas{
+        width: 0px;
+    }
+
+    .viivat_alas.viiva2{
+        left: 35%;
+        width: 1px;
+    }
+
+
+    .container{
+    height: 300vh;
+    grid-template-columns: 1fr;
+    grid-template-rows:  50vh 50vh 1fr 0.5fr 0.8fr 0.5fr ;
+
+    grid-template-areas: 
+    "header1"
+    "headerBelow1"
+    "box1"
+    "box2"
+    "box4"
+    "box5";
+    }
+
+    #box2{
+        background-color: var(--bg-primary);
+    }
+
+    .portfolio-container{
+        height: 400vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+
+        grid-template-areas: 
+        "img_box1"
+        "img_box2"
+        "img_box3"
+        "img_box4-text"
+        "img_box4"
+        "img_box5"
+        "img_box5-text";
+
+        row-gap: 2rem;
+    }
+
+    .contact-container{
+        height: 70vh;
+    }
+
+
+    #contact_box{
+        background-size: 600%;
+    }
+
+    #img_box4-text{
+        margin-right: 0%;
+    }
+
+    .footer-container{
+        height: 30vh;
+        margin-bottom: 5.1rem;
+    }
+    #footer2{
+      
+    }
+
+    #big_text{
+        font-size: 5rem;
+    }
+}
