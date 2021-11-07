@@ -1,0 +1,6 @@
+#periaatteessa tämä vie indexin ja tyylit gitistä cpaneliin...
+---
+deployment:
+	tasks:
+		- export DEPLOYPATH=/home/danihwgg/public_html/
+		- /WIP/index.html $DEPLOYPATH
