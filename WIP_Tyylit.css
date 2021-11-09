@@ -2,9 +2,9 @@
 /* määritellään taustan ja koko sivustoon vaikuttavia parametrejä */
 @font-face {
     font-family: 'ClashGrotesk-Variable';
-    src: url('..WIP/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
-         url('..WIP/fonts/ClashGrotesk-Variable.woff') format('woff'),
-         url('..WIP/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+    src: url('nc_assets/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
+         url('nc_assets/fonts/ClashGrotesk-Variable.woff') format('woff'),
+         url('nc_assets/fonts/ClashGrotesk-Variable.ttf') format('truetype');
 
          font-weight: 200 700;
          font-display: swap;
@@ -35,7 +35,6 @@
     
     --widescreen-margin:0 15%;
 
-    --image-url: url(nc_assets/kuvat);
 }
 
 body{
@@ -173,7 +172,7 @@ h2{
 
 #box1{
     grid-area: box1;
-    background-image: var(--gradient-darken),url(nc_assets/kuvat/drive/profile.png);
+    background-image: var(--gradient-darken),url(nc_assets/kuvat/drive/profile.jpg);
     box-shadow: var(--shadow-primary);
     background-size: cover;
     background-position: center;
@@ -194,7 +193,7 @@ h2{
     border-radius: 1rem;
     box-shadow: var(--shadow-primary);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    background-image: url(kuvat/Whangaehu.svg);
+    background-image: url(nc_assets/kuvat/Whangaehu.svg);
     background-size: 400%;    
     background-position: center;
     background-repeat: no-repeat;
@@ -222,7 +221,7 @@ h2{
 
 #img_box1{
     grid-area: img_box1;
-    background-image: url(kuvat/drive/aatu1.png);
+    background-image: url(nc_assets/kuvat/drive/aatu1.jpg);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -233,7 +232,7 @@ h2{
 
 #img_box2{
     grid-area: img_box2;
-    background-image: url(kuvat/drive/Speed.png);
+    background-image: url(nc_assets/kuvat/drive/Speed.jpg);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -244,7 +243,7 @@ h2{
 
 #img_box3{
     grid-area: img_box3;
-    background-image: url(kuvat/Joutsenet_medium.png);
+    background-image: url(nc_assets/kuvat/Joutsenet_medium.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -255,7 +254,7 @@ h2{
 
 #img_box4{
     grid-area: img_box4;
-    background-image: url(kuvat/drive/lehti.png);
+    background-image: url(nc_assets/kuvat/drive/lehti.jpg);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
@@ -263,7 +262,7 @@ h2{
 #img_box4-text{
     grid-area: img_box4-text;
     margin-right: 1rem;
-    background-image: url(kuvat/drive/sumea_lehti.png);
+    background-image: url(nc_assets/kuvat/drive/sumea_lehti.jpg);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
@@ -271,7 +270,7 @@ h2{
 
 #img_box5{
     grid-area: img_box5;
-    background-image: url(kuvat/drive/ikkuna.png);
+    background-image: url(nc_assets/kuvat/drive/ikkuna.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -305,7 +304,7 @@ h2{
     background-repeat: no-repeat;
     background-size: 400%;
     background-position: center;
-    background-image: var(--gradient-darken-over),url(kuvat/Clarence.svg);
+    background-image: var(--gradient-darken-over),url(nc_assets/kuvat/Clarence.svg);
     /* box-shadow: var(--shadow-primary);
     border: 1px solid rgba(255, 255, 255, 0.05); */
     z-index: 0;
