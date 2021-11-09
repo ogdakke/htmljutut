@@ -68,6 +68,7 @@ ul{
     /* font-size: 8rem; */
     margin: 0;
     font-weight: 500;
+    font-size: clamp(4rem, 8vw, 14rem);
 }
 
 .navbar{
@@ -117,10 +118,10 @@ ul{
 
 .container{
     display: grid;
-    height: 300vh;
+    height: auto;
     /* grid-template-columns:minmax(0.2fr, 0.3fr) minmax(0.4fr, 0.6fr); */
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.5fr 0.5fr 0.5fr 90vh;
+    grid-template-rows: minmax(min-content, 50vh) 0.5fr minmax(600px, 70vh) minmax(200px,25vh);
 
     grid-template-areas: 
     "header1 header1 header1"
@@ -159,6 +160,8 @@ ul{
     position: relative;
     left: 5%;
     font-weight: 300;
+    background-color: var(--bg-primary);
+    width: max-content;
 }
 
 h2{
@@ -168,7 +171,12 @@ h2{
 /* ----BOXIT----- */
 
 .boxes{
-    perspective: 2px;}
+    perspective: 2px;
+}
+
+#box4 h2{
+    font-size: clamp(3rem, 4vw, 9rem);
+}
 
 #box1{
     grid-area: box1;
@@ -189,23 +197,24 @@ h2{
 
 #box4{
     grid-area: box4;
-    background: rgba(255, 255, 255, 0.1);
+    /* background: rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     box-shadow: var(--shadow-primary);
     border: 1px solid rgba(255, 255, 255, 0.05);
     background-image: url(nc_assets/kuvat/Whangaehu.svg);
     background-size: 400%;    
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 
 /* portfolio-osion kuvaboxit */
 .portfolio-container{
     display: grid;
-    height: 400vh;
+    height: auto;
     grid-template-columns: 1fr 1.2fr;
-    grid-template-rows: 1.1fr 1.1fr 1fr 1fr 1fr;
+    grid-template-rows: minmax(800px, 90vh) minmax(400px, 90vh)
+    minmax(400px, 60vh) minmax(500px, 80vh) minmax(600px, 90vh);
     grid-template-areas: 
     "img_box1-text img_box1"
     "img_box2 img_box2-text"
@@ -243,7 +252,7 @@ h2{
 
 #img_box3{
     grid-area: img_box3;
-    background-image: url(nc_assets/kuvat/Joutsenet_medium.jpg);
+    background-image: url(nc_assets/kuvat/drive/vesi.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -289,7 +298,7 @@ h2{
     grid-template-areas: 
     "contact_box";
 
-    padding: 0rem;
+    padding: 0rem 1rem;
 }
 
 
@@ -300,12 +309,12 @@ h2{
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    /* background-color: var(--bg-primary); */
-    background-repeat: no-repeat;
+    background-color: var(--bg-primary);
+    /* background-repeat: no-repeat;
     background-size: 400%;
     background-position: center;
     background-image: var(--gradient-darken-over),url(nc_assets/kuvat/Clarence.svg);
-    /* box-shadow: var(--shadow-primary);
+    box-shadow: var(--shadow-primary);
     border: 1px solid rgba(255, 255, 255, 0.05); */
     z-index: 0;
 }
@@ -323,7 +332,6 @@ h2{
     position:relative;
     display:flex;
     align-self: center;
-    justify-self: center;
     font-size:1.458vw;
     font-weight:300;
     padding:.5vw 1.778vw;
@@ -341,7 +349,7 @@ h2{
     -webkit-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
     -moz-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
     transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
-    z-index: 10;
+    z-index: -3;
 }
 
 .button::before{
@@ -474,15 +482,16 @@ background-color: var(--accent-color);
 
 /* media isoille näytöille */
 @media only screen and (min-width: 1920px){
-    .container{
+    .container,
+    .portfolio-container,
+    .footer-container,
+    .contact-container{
         margin: var(--widescreen-margin);
     }
 
-    .footer-container{
-        margin:var(--widescreen-margin)
-    }
 
     .viivat_alas.viiva1{
+        left: -0.7rem;
         margin: var(--widescreen-margin);
     }
     .viivat_alas.viiva2{
@@ -550,15 +559,6 @@ background-color: var(--accent-color);
         width: 0%;
     }
 
-    #big_text{
-        font-size: 13rem;
-        line-height: 50%;
-        transition: 0.5s;
-    }
-
-    #big_text{
-        line-height: 100%;
-    }
 }
 
 /* media pienille näytöille */
@@ -601,11 +601,13 @@ background-color: var(--accent-color);
         width: 1px;
     }
 
+    /* minmax(600px, 80vh) minmax(400px, 90vh)
+    minmax(400px, 60vh) minmax(500px, 80vh) minmax(600px, 90vh); */
 
     .container{
-    height: 300vh;
+    height: auto;
     grid-template-columns: 1fr;
-    grid-template-rows:  50vh 50vh 1fr 0.5fr 0.8fr 0.5fr ;
+    grid-template-rows:  50vh 50vh minmax(400px, 60vh ) minmax(min-content, max-content ) minmax(100px, 30vh ) minmax(min-content, max-content);
 
     grid-template-areas: 
     "header1"
@@ -620,10 +622,14 @@ background-color: var(--accent-color);
         background-color: var(--bg-primary);
     }
 
+    #box4 h2{
+        background-color: var(--bg-primary);
+    }
+
     .portfolio-container{
-        height: 400vh;
+        height: auto;
         grid-template-columns: 1fr;
-        grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr 1fr 0.5fr;
+        grid-template-rows: minmax(500px, 80vh) minmax(500px, 80vh) minmax(200px, 30vh) minmax(500px, 70vh) minmax(500px, 80vh) minmax(500px, 80vh) minmax(min-content, max-content);
 
         grid-template-areas: 
         "img_box1"
@@ -653,9 +659,5 @@ background-color: var(--accent-color);
     .footer-container{
         height: 30vh;
         margin-bottom: 5.1rem;
-    }
-
-    #big_text{
-        font-size: 5rem;
     }
 }
