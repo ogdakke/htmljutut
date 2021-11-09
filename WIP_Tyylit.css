@@ -34,6 +34,8 @@
     --gradient-darken-over:linear-gradient(180deg, hsl(0, 0%, 5%, 0.8), hsl(0, 0%, 5%, 0.8));
     
     --widescreen-margin:0 15%;
+
+    --image-url: url(nc_assets/kuvat);
 }
 
 body{
@@ -171,7 +173,7 @@ h2{
 
 #box1{
     grid-area: box1;
-    background-image: var(--gradient-darken),url(kuvat/drive/Profile.png);
+    background-image: var(--gradient-darken),url(nc_assets/kuvat/drive/profile.png);
     box-shadow: var(--shadow-primary);
     background-size: cover;
     background-position: center;
