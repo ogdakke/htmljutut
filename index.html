@@ -11,7 +11,7 @@
         <link rel="font" href="fonts">
     </head>
 <body>
-    <nav class="navbar" title="navbar">
+    <nav class="navbar" id="navbar-id" title="navbar">
             <ul class="navbar-nav" title="List of navigation items">
                 <li class="nav-item" title="Home">
                     <a href="#header1" class="nav-link">
@@ -154,9 +154,15 @@
                         </footer>
                         <footer id="footer2" title="social media information">
                             <ul class="socials" title="Social media list">
-                                <li><a class="link social" href="https://twitter.com/">Twitter</a></li>
-                                <li><a class="link social" href="https://www.linkedin.com/">Linkedin</a></li>
-                                <li><a class="link social" href="https://www.youtube.com/">Youtube</a></li>
+                                <li> 
+                                    <a class="link-social" href="https://twitter.com/">Twitter</a>
+                                </li>
+                                <li>
+                                    <a class="link-social" href="https://www.linkedin.com/">Linkedin</a>
+                                </li>
+                                <li>
+                                    <a class="link-social" href="https://www.youtube.com/">Youtube</a>
+                                </li>
                             </ul>
                         </footer>
                         <footer id="footer3" title="contact information">
@@ -164,10 +170,24 @@
                             <div class="contact-box-lower"></div>
                         </footer>  
                     </div>
-            </section>
-           
+            </section>           
         </section>
+        <!-- script for hiding navbar while scrolling down -->
+        <script >
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar-id").style.bottom = "0";
+                } else {
+                    document.getElementById("navbar-id").style.bottom = "-5rem";
+                }
+                prevScrollpos = currentScrollPos;
+            } 
+        </script>
     </main>
+
+
 
     </body>
 </html>

@@ -68,7 +68,7 @@ ul{
     /* font-size: 8rem; */
     margin: 0;
     font-weight: 500;
-    font-size: clamp(4rem, 8vw, 14rem);
+    font-size: clamp(4rem, 11vw, 14rem);
 }
 
 .navbar{
@@ -332,9 +332,9 @@ h2{
     position:relative;
     display:flex;
     align-self: center;
-    font-size:1.458vw;
+    font-size: clamp(1rem, 1.5vw, 2rem);
     font-weight:300;
-    padding:.5vw 1.778vw;
+    padding:.5rem 1.778rem;
     overflow:hidden;
     white-space:nowrap;
     -webkit-transform:translateZ(0);
@@ -344,7 +344,7 @@ h2{
     background: var(--bg-primary);
     color:var(--text-primary);
     cursor:pointer;
-    border-radius:2.083vw;
+    border-radius:3rem;
     border:1px solid var(--accent-color);
     -webkit-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
     -moz-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
@@ -383,7 +383,6 @@ h2{
 .footer-container{
     display: grid;
     height: 30vh;
-    max-height: 30vh;
     position: relative;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -409,8 +408,11 @@ h2{
     border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
     ulottuu. "top | right | bottom | left" */
     border-image-width: 1px;
-    border-image: var(--y-gradient-inverted) 1;
+    border-image: var(--y-gradient) 1;
     border-left: 1px solid black;
+    border-right: 0px transparent;
+    border-top: 0px transparent;
+    border-bottom: 0px transparent;
 }
 
 #footer3{
@@ -422,11 +424,13 @@ h2{
     border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
     ulottuu. "top | right | bottom | left" */
     border-image-width: 1px;
-    border-image: var(--y-gradient-inverted) 1;
+    border-image: var(--y-gradient) 1;
     border-left: 1px solid black;
+    border-right: 0px transparent;
+    border-top: 0px transparent;
+    border-bottom: 0px transparent;
 }
 
-.footer
 
 .socials a{
     list-style: none;
@@ -516,12 +520,16 @@ background-color: var(--accent-color);
         ulottuu. "top | right | bottom | left" */
         border-image-width: 1px;
         border-right: 1px solid white;
+        border-left: 0px transparent;
+        border-top: 0px transparent;
+        border-bottom: 0px transparent;
+        
     }
     .nav-link{
         opacity: 0.2;
     }
 
-    .nav-link:hover{
+    .nav-link:hover, .nav-link:focus{
         background-image: linear-gradient(to top, hsl(0, 0%, 10%), hsl(0, 0%, 11%));
     }
 
@@ -533,7 +541,7 @@ background-color: var(--accent-color);
     .navbar:hover .nav-link{
         opacity: 1;
     }
-    .navbar:hover{
+    .navbar:hover, .navbar:focus{
         width: 10rem;
     }
 
@@ -541,22 +549,75 @@ background-color: var(--accent-color);
         filter: grayscale(0%);
     }
     
-    .nav-item::after{
-        content: '';
+    .nav-item{
+        position: relative;
+        transition: color 0.2s ease-in;
+    }
+    .nav-item:after{
+        content: "";
         width: 0%;
-        height: 1px;
-        background-image: var(--x-gradient);
+        min-height: 1px;
+        background: var(--x-gradient);
         display: block;
         margin: auto;
         transition: 0.2s ease-in;
     }
+    .nav-item:focus,
+    .nav-item:hover{
+        background: var(--x-gradient);
+    }
     
-    .nav-item:hover::after{
-        background-image: var(--x-gradient);
+    .nav-item:hover::after,
+     .nav-item:focus::after{
+        background: var(--x-gradient);
         width: 100%;
     }
-    .nav-item:last-child:hover::after{
+    .nav-item:last-child:hover::after, .nav-item:last-child:focus::after{
         width: 0%;
+    }
+    
+    .link-social{
+        position: relative;
+        -webkit-transition:color .3s cubic-bezier(.19,1,.22,1);
+        -moz-transition:color .3s cubic-bezier(.19,1,.22,1);
+        transition:color .3s cubic-bezier(.19,1,.22,1);
+    }
+
+    .link-social:after{
+        content:"";
+        position:absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        height:.075em;
+        min-height:1px;
+        -webkit-transform-origin:right;
+        -moz-transform-origin:right;
+        transform-origin:right;
+        -webkit-transform:scaleX(0);
+        -moz-transform:scaleX(0);
+        transform:scaleX(0);
+        background:var(--x-gradient);
+        -webkit-transition:-webkit-transform .95s cubic-bezier(.19,1,.22,1);
+        transition:-webkit-transform .95s cubic-bezier(.19,1,.22,1);
+        -moz-transition:transform .95s cubic-bezier(.19,1,.22,1),-moz-transform .95s cubic-bezier(.19,1,.22,1);
+        transition:transform .95s cubic-bezier(.19,1,.22,1);
+        transition:transform .95s cubic-bezier(.19,1,.22,1),-webkit-transform .95s cubic-bezier(.19,1,.22,1),-moz-transform .95s cubic-bezier(.19,1,.22,1); 
+    }
+
+    .link-social:focus,
+    .link-social:hover{
+        color: var(--x-gradient);
+        outline: none;
+    }
+    
+    .link-social:focus::after, .link-social:hover::after{
+        -webkit-transform-origin:left;
+        -moz-transform-origin:left;
+        transform-origin:left;
+        -webkit-transform:scaleX(1);
+        -moz-transform:scaleX(1);
+        transform:scaleX(1)
     }
 
 }
@@ -565,14 +626,20 @@ background-color: var(--accent-color);
 @media only screen and (max-width: 950px){
     .navbar{
         position: fixed;
-        bottom: 0;
         margin-bottom: 0;
         width: 100vw;
         height: 5rem;
         border-image: var(--x-gradient) 100;
         border-top: 1px solid white;
-        border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
+        border-image-outset: 0px 0px 10px 0px; /* kuinka paljon nav:in "yli" border 
         ulottuu. "top | right | bottom | left" */
+        transition: bottom 0.3s;
+    }
+
+    #navbar{
+        display: block;
+        bottom: 0;
+        transition: bottom 0.3s;
     }
 
     .nav-item:last-child{
@@ -657,7 +724,23 @@ background-color: var(--accent-color);
     }
 
     .footer-container{
-        height: 30vh;
+        height: 50vh;
         margin-bottom: 5.1rem;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 50vh;
+
+        grid-template-areas: 
+        "footer1 footer2"
+        "footer3 footer3";
+
+
+    }
+
+    #footer3{
+        border-left: 0px transparent;
+        border-right: 0px transparent;
+        border-top: 0px transparent;
+        border-bottom: 0px transparent;
     }
 }
