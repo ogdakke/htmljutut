@@ -26,6 +26,8 @@
     --text-primary: hsl(0, 0%, 85%);
     --text-secondary: hsl(0, 0%, 97%);
     --accent-color:rgb(235, 85, 51);
+    --grey1: hsl(30, 1%, 62%);
+
     --x-gradient:linear-gradient(90deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
     --y-gradient: linear-gradient(180deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
     --y-gradient-inverted: linear-gradient(0,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
@@ -69,6 +71,13 @@ ul{
     margin: 0;
     font-weight: 500;
     font-size: clamp(4rem, 11vw, 14rem);
+}
+
+.text-muted{
+    font-weight: 200;
+    letter-spacing: 1.5pt;
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--grey1);
 }
 
 .navbar{
@@ -349,7 +358,7 @@ h2{
     -webkit-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
     -moz-transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
     transition:border-color .3s cubic-bezier(.28,.44,.49,1) .2s;
-    z-index: -3;
+    z-index: 1;
 }
 
 .button::before{
@@ -431,7 +440,14 @@ h2{
     border-bottom: 0px transparent;
 }
 
+.socials{
+    list-style-position: inside;
+    margin-bottom: 0.5rem;
+}
 
+.socials li {
+    padding-bottom: 0.7rem;
+}
 .socials a{
     list-style: none;
 }
@@ -484,6 +500,67 @@ background-color: var(--accent-color);
 
 
 
+
+/* CONTACT-PAGE MUOTOILUA */
+
+.form{
+    display: grid;
+
+    padding: 0.75rem;
+
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    margin: 10vw 0;
+}
+
+.form-container{
+    grid-column: span 5;
+}
+
+.form aside{
+    grid-column: span 5;
+}
+
+.form-wrapper{
+    position: relative;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.form-name-lastname{
+    display: flex;
+    flex-direction: column;
+    padding: 0.8vw, 0;
+}
+
+.form-input,
+textarea{
+    background-color: transparent;
+    border-top: 0px solid;
+    border-left: 0px solid;
+    border-right: 0px solid;
+    border-bottom: 1px solid var(--grey1);
+    padding: 4vw 0;
+}
+
+input{
+    caret-color: white;
+}
+input::placeholder,
+textarea::placeholder{
+    color: var(--grey1);
+}
+
+.form-wrapper .button{
+    align-self: flex-start;
+}
+
+
+
 /* media isoille näytöille */
 @media only screen and (min-width: 1920px){
     .container,
@@ -510,7 +587,6 @@ background-color: var(--accent-color);
 
 @media only screen and (min-width: 950px){
     
-
     .navbar{
         top: 0;
         width: 5rem;
@@ -551,7 +627,7 @@ background-color: var(--accent-color);
     
     .nav-item{
         position: relative;
-        transition: color 0.2s ease-in;
+
     }
     .nav-item:after{
         content: "";
@@ -560,16 +636,11 @@ background-color: var(--accent-color);
         background: var(--x-gradient);
         display: block;
         margin: auto;
-        transition: 0.2s ease-in;
-    }
-    .nav-item:focus,
-    .nav-item:hover{
-        background: var(--x-gradient);
+        transition: 0.2s ease-in-out;
     }
     
     .nav-item:hover::after,
      .nav-item:focus::after{
-        background: var(--x-gradient);
         width: 100%;
     }
     .nav-item:last-child:hover::after, .nav-item:last-child:focus::after{
