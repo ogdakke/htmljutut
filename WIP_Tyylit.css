@@ -428,10 +428,11 @@ h2{
     /* grid-area: footer3; */
     background-color: var(--bg-primary);
     display: grid;
+    height: 10vh;
     grid-column: span 2;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(10, 1fr);
-
+    padding-top: 1rem;
     /* justify-content: space-between;
     flex-direction: column; */
     border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
@@ -589,13 +590,16 @@ background-color: var(--accent-color);
 .form-input,
 textarea{
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: 1.2rem;
     background-color: transparent;
     border-top: 0px solid;
     border-left: 0px solid;
     border-right: 0px solid;
     border-bottom: 1px solid var(--grey1);
-    padding-top: 0.5rem;
+}
+
+label{
+    margin: 1rem 0;
 }
 
 input:focus,
@@ -609,7 +613,6 @@ input{
 input::placeholder,
 textarea::placeholder{
     color: var(--grey1);
-    margin: 1rem 0;
 }
 
 .form-wrapper .button{
@@ -870,12 +873,10 @@ textarea{
     }
 
     .footer-container{
-        height: 50vh;
-        margin-bottom: 5.1rem;
+        height: auto;
 
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 50vh;
-
+        grid-template-rows: 1fr 1fr;
         grid-template-areas: 
         "footer1 footer2"
         "footer3 footer3";
@@ -884,6 +885,8 @@ textarea{
     }
 
     #footer3{
+     
+        height: 10vh;
         border-left: 0px transparent;
         border-right: 0px transparent;
         border-top: 0px transparent;

@@ -55,35 +55,36 @@
             <div class="form-container">
                 <h2 id="h2-form">Send me an email about anything.</h2>
                 <div class="form-wrapper">
-                    <form action="" class="contact-form" style="opacity: 1;">
+                    <form method="POST" action="email-algo.php" class="contact-form" style="opacity: 1;">
                         <div class="form-name-lastname">
-                            <label for="FIRSTNAME" class="text-muted">First Name</label>
-                            <input type="text" class="form-input" name="FIRSTNAME" placeholder="First Name" required="">
-                            <label for="LASTNAME" class="text-muted">Last Name</label>
-                            <input type="text" class="form-input" name="LASTNAME" placeholder="Last Name" required="">
+                            <label for="name" class="text-muted">First Name*</label>
+                                <input type="text" class="form-input" name="name" placeholder="First Name" required="">
+                            <label for="lastname" class="text-muted">Last Name</label>
+                                <input type="text" class="form-input" name="lastname" placeholder="Last Name">
                         </div>
-                        <label for="EMAIL" class="text-muted">Email</label>
-                        <input type="email" class="form-input" name="EMAIL" placeholder="Your@email.here" required="">
+                        <label for="email" class="text-muted">Email</label>
+                            <input type="email" class="form-input" name="EMAIL" placeholder="Your@email.here" required="">
                         <label for="" class="text-muted"></label>
-                        <textarea name="TEXTAREA" id="" cols="30" rows="6" maxlength="600" placeholder="Write your message here"></textarea>
-                        <a href="" class="button">Send</a>
+                            <textarea name="message" id="" cols="30" rows="6" maxlength="600" placeholder="Write your message here"></textarea>
+                        <a>
+                            <input class="button" name="sendflag" type="submit" value="send"></a>
                     </form>
                 </div>
             </div>
         </section>
-        <section class="footer-page" title="footer">
+        <section class="footer-page">
             <div class="footer-container">
-                <footer id="footer1" title="logo and information">
+                <footer id="footer1">
                     <div class="footer-logo-box" >
-                        <img src="nc_assets/kuvat/logo/Asset_2.svg" alt="logo" id="footer_logo">
+                        <img src="nc_assets/kuvat/logo/Asset_2.svg" alt="logo" id="footer_logo" title="logo">
                         <div class="footer-text">
-                            <p class="address">01610 Vantaa, Finland</p>
-                            <p class="copyright">&COPY Daniel Wargh 2021</p>
+                            <p class="text-muted" title="address">01610 Vantaa, Finland</p>
+                            <p class="text-muted" title="copyright">&COPY Daniel Wargh 2021</p>
                         </div>
                     </div>
                 </footer>
-                <footer id="footer2" title="social media information">
-                    <ul class="socials" title="Social media list">
+                <footer id="footer2">
+                    <ul class="socials">
                         <li> 
                             <a class="link-social" href="https://twitter.com/">Twitter</a>
                         </li>
@@ -95,12 +96,26 @@
                         </li>
                     </ul>
                 </footer>
-                <footer id="footer3" title="contact information">
-                    <div class="contact-box-upper"></div>
-                    <div class="contact-box-lower"></div>
+                <footer id="footer3">
+                    <div class="contact-box-upper">
+                        <div class="button-wrapper">
+                            <a href="" class="button" id="newsletter-button"><input type="submit" name="sendflag" value="send" /></a>
+                        </div>
+                    </div>
+                    <div class="contact-box-lower">
+                        <div class="newsletter-wrapper">
+                            <form action="" class="newsletter" style="opacity: 1;">
+                                <div class="email-form">
+                                    <label for="EMAIL" class="text-muted">Enter your email to maybe someday get something there.</label>
+                                    <input type="email" name="EMAIL" class="form-input" placeholder="your@email.here">
+                                    
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </footer>  
             </div>
-        </section>
+    </section>
         <!-- script for hiding navbar while scrolling down -->
         <script >
             var prevScrollpos = window.pageYOffset;
@@ -117,4 +132,7 @@
     </main>
     
 </body>
+
+
+
 </html>
