@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="WIP_Tyylit.css">
 </head>
 <body>
-    <nav class="navbar" title="navbar">
+    <nav class="navbar" id="navbar-id" title="navbar">
         <ul class="navbar-nav" title="List of navigation items">
             <li class="nav-item" title="Home">
                 <a href="https://danielew.com/#header1" class="nav-link">
@@ -101,6 +101,20 @@
                 </footer>  
             </div>
         </section>
+        <!-- script for hiding navbar while scrolling down -->
+        <script >
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar-id").style.bottom = "0";
+                } else {
+                    document.getElementById("navbar-id").style.bottom = "-5rem";
+                }
+                prevScrollpos = currentScrollPos;
+            } 
+        </script>
     </main>
+    
 </body>
 </html>

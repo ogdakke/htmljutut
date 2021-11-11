@@ -75,8 +75,8 @@ ul{
 
 .text-muted{
     font-weight: 200;
-    letter-spacing: 1.5pt;
-    font-size: clamp(1rem, 2vw, 1.25rem);
+    letter-spacing: 1.9pt;
+    font-size: clamp(0.8rem, 2vw, 1rem);
     color: var(--grey1);
 }
 
@@ -425,11 +425,15 @@ h2{
 }
 
 #footer3{
-    grid-area: footer3;
+    /* grid-area: footer3; */
     background-color: var(--bg-primary);
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+    display: grid;
+    grid-column: span 2;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+
+    /* justify-content: space-between;
+    flex-direction: column; */
     border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
     ulottuu. "top | right | bottom | left" */
     border-image-width: 1px;
@@ -438,7 +442,52 @@ h2{
     border-right: 0px transparent;
     border-top: 0px transparent;
     border-bottom: 0px transparent;
+    margin-bottom: 5rem;
 }
+
+.contact-box-lower{
+    /* grid-column: span 4; */
+    grid-column: span 4;
+
+    grid-row:span 2;
+}
+.newsletter-wrapper{
+    margin-left: 1rem;
+    position: relative;
+}
+
+.newsletter{
+    display: flex;
+    flex-direction: column;
+}
+
+.{}
+.email-form{
+    display: flex;
+    flex-direction: column;
+    padding: 0.8vw, 0;
+}
+
+.contact-box-upper{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 5;
+    display: flex;
+}
+
+.button-wrapper .button{
+    align-self: flex-end;
+    justify-self: center;
+}
+
+#newsletter-button{
+    font-size: 1.3rem;
+    margin-left: clamp(1.5rem, 4vw, 4rem);
+    padding: 0.5vw 2vw;
+}
+
+
+
 
 .socials{
     list-style-position: inside;
@@ -539,12 +588,19 @@ background-color: var(--accent-color);
 
 .form-input,
 textarea{
+    color: var(--text-primary);
+    font-size: 1rem;
     background-color: transparent;
     border-top: 0px solid;
     border-left: 0px solid;
     border-right: 0px solid;
     border-bottom: 1px solid var(--grey1);
-    padding: 4vw 0;
+    padding-top: 0.5rem;
+}
+
+input:focus,
+textarea:focus{
+    outline: none;
 }
 
 input{
@@ -553,10 +609,14 @@ input{
 input::placeholder,
 textarea::placeholder{
     color: var(--grey1);
+    margin: 1rem 0;
 }
 
 .form-wrapper .button{
     align-self: flex-start;
+}
+textarea{
+    margin: 2rem 0;
 }
 
 
@@ -689,6 +749,21 @@ textarea::placeholder{
         -webkit-transform:scaleX(1);
         -moz-transform:scaleX(1);
         transform:scaleX(1)
+    }
+
+    /* jotta footerin send-nappi ei näyttäisi urpolta ei-mobiililla */
+    .contact-box-upper{
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column: 5;
+        display: flex;
+    }
+
+
+    /* contactpage */
+
+    .form-container{
+        grid-column: span 3;
     }
 
 }
