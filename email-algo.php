@@ -85,7 +85,7 @@
                     $a = mail( $mail_to_send_to, $subject, $message, $headers );
                     if ($a)
                     {
-                         $toimii = "toimii"
+                         $toimii = "toimii";
                          echo $toimii;
                          // print("Message was sent, you can send another one");
                     } else {
