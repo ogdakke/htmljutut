@@ -85,11 +85,12 @@
                     $a = mail( $mail_to_send_to, $subject, $message, $headers );
                     if ($a)
                     {
-                         $toimii = "toimii";
+                         $toimii = "Your message has been delivered.";
                          echo $toimii;
                          // print("Message was sent, you can send another one");
                     } else {
-                         print("Message wasn't sent, please check that you have changed emails in the bottom");
+                         $eitoimi = "Your message wasn't sent. Please check your email address."
+                         // print("Message wasn't sent, please check that you have changed emails in the bottom");
                     }
           }
      ?>
