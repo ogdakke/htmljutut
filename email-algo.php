@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>WIP</title>
+        <title>Danielew</title>
         <link rel="shortcut icon" href="nc_assets/kuvat/logo/dew.svg" type="image/svg">
         <link rel="stylesheet" href="WIP_Tyylit.css">
 </head>
@@ -68,7 +68,6 @@
                             <textarea name="message" id="" cols="30" rows="6" maxlength="600" placeholder="Write your message here"></textarea>
                         <input class="button" name="sendflag" type="submit" value="send">
                         <div class="php-hope" >
-                             <p></p>
      <?php
                $mail_to_send_to = "daniel.wargh1@gmail.com";
                $from_email = "daniel.wargh@danielew.com";
@@ -87,13 +86,11 @@
                     {
                          
 
-                         $toimii = "Your message has been delivered.";
+                         $toimii = 'Your message has been delivered.';
                          echo "<p style='color:white;'>" . $toimii . "</p>";
-                         // print("Message was sent, you can send another one");
                     } else {
-                         $eitoimi = "Your message wasn't sent. Please check your email address."
+                         $eitoimi = "Your message wasn't sent. Please check your email address.";
                          echo "<p style='color:white;'>" . $eitoimi . "</p>";
-                         // print("Message wasn't sent, please check that you have changed emails in the bottom");
                     }
           }
      ?>
