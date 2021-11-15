@@ -52,10 +52,10 @@
             <aside>
                 <h2 id="h2-form" >contact form</h2>
             </aside>
-            <div class="form-container">
+            <div id="form-container" class="form-container">
                 <h2 id="h2-form">Send me an email about anything.</h2>
                 <div class="form-wrapper">
-                    <form method="POST" action="email-algo.php" class="contact-form" style="opacity: 1;">
+                    <form method="POST" action="email-algo.php" class="contact-form">
                         <div class="form-name-lastname">
                             <label for="name" class="text-muted">First Name*</label>
                                 <input type="text" class="form-input" name="name" placeholder="First Name" required="">
@@ -66,8 +66,39 @@
                             <input type="email" class="form-input" name="email" placeholder="Your@email.here" required="">
                         <label for="" class="text-muted"></label>
                             <textarea name="message" id="" cols="30" rows="6" maxlength="600" placeholder="Write your message here"></textarea>
-                        <input class="button" name="sendflag" type="submit" value="send">
-                    </form>
+                            <div class="php-hope" >
+                                
+                                <!-- <?php
+                                    $mail_to_send_to = "daniel.wargh1@gmail.com";
+                                    $from_email = "daniel.wargh@danielew.com";
+               $sendflag = $_REQUEST['sendflag'];    
+               $name=$_REQUEST['name'];
+               $lastname=$_REQUEST['lastname'];
+               if ( $sendflag == "send" )
+                    {
+                    $subject= "Message subject";
+                    $email = $_REQUEST['email'] ;
+                    $message= "\r\n" . "Name: $name $lastname" . "\r\n"; //get recipient name in contact form
+                    $message = $message.$_REQUEST['message'] . "\r\n" ;//add message from the contact form to existing message(name of the client)
+                    $headers = "From: $from_email" . "\r\n" . "Reply-To: $email"  ;
+                    $a = mail( $mail_to_send_to, $subject, $message, $headers );
+                    if ($a)
+                    {
+                        
+
+                        $toimii = "Your message has been delivered.";
+                         echo "<p style='color:white;'>" . $toimii . "</p>";
+                         // print("Message was sent, you can send another one");
+                        } else {
+                            $eitoimi = "Your message wasn't sent. Please check your email address."
+                            echo "<p style='color:white;'>" . $eitoimi . "</p>";
+                            // print("Message wasn't sent, please check that you have changed emails in the bottom");
+                        }
+                    }
+                    ?> -->
+                </div>
+                </form>
+                        <input class="button" name="sendflag" type="submit" value="send" id="button" onclick="HideForm()">
                 </div>
             </div>
         </section>
@@ -98,7 +129,7 @@
                 <footer id="footer3">
                     <div class="contact-box-upper">
                         <div class="button-wrapper">
-                            <a href="" class="button" id="newsletter-button"><input type="submit" name="sendflag" value="send" /></a>
+                            <input href="" class="button" id="newsletter-button" type="submit" name="sendflag" value="send" />
                         </div>
                     </div>
                     <div class="contact-box-lower">
@@ -115,6 +146,22 @@
                 </footer>  
             </div>
     </section>
+        <!-- script for hiding on click -->
+    <script>
+        // var HiddenText = document.getElementById("hidden-text");
+        var form = document.getElementById("form-container");
+
+        function HideForm(){
+            form.style.opacity = "0";
+            form.style.pointerEvents = "none"
+            // HiddenText.style.opacity = "1";
+            console.log("toimii");
+
+        }
+        
+
+    </script>
+    
         <!-- script for hiding navbar while scrolling down -->
         <script >
             var prevScrollpos = window.pageYOffset;
@@ -131,7 +178,4 @@
     </main>
     
 </body>
-
-
-
 </html>

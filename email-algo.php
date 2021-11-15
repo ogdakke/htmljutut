@@ -85,11 +85,14 @@
                     $a = mail( $mail_to_send_to, $subject, $message, $headers );
                     if ($a)
                     {
+                         
+
                          $toimii = "Your message has been delivered.";
-                         echo $toimii;
+                         echo "<p style='color:white;'>" . $toimii . "</p>";
                          // print("Message was sent, you can send another one");
                     } else {
                          $eitoimi = "Your message wasn't sent. Please check your email address."
+                         echo "<p style='color:white;'>" . $eitoimi . "</p>";
                          // print("Message wasn't sent, please check that you have changed emails in the bottom");
                     }
           }
@@ -126,7 +129,7 @@
                 <footer id="footer3">
                     <div class="contact-box-upper">
                         <div class="button-wrapper">
-                            <a href="" class="button" id="newsletter-button"><input type="submit" name="sendflag" value="send" /></a>
+                            <input href="" class="button" id="newsletter-button" type="submit" name="sendflag" value="send" />
                         </div>
                     </div>
                     <div class="contact-box-lower">
