@@ -435,14 +435,6 @@ h2{
     padding-top: 1rem;
     /* justify-content: space-between;
     flex-direction: column; */
-    border-image-outset: 0px 0px 0px 0px; /* kuinka paljon nav:in "yli" border 
-    ulottuu. "top | right | bottom | left" */
-    border-image-width: 1px;
-    border-image: var(--y-gradient) 1;
-    border-left: 1px solid black;
-    border-right: 0px transparent;
-    border-top: 0px transparent;
-    border-bottom: 0px transparent;
     margin-bottom: 5rem;
 }
 
@@ -646,6 +638,7 @@ textarea{
     .h2-title{
         left: 8%;
     }
+
 }
 
 @media only screen and (min-width: 950px){
@@ -887,9 +880,5 @@ textarea{
     #footer3{
      
         height: 10vh;
-        border-left: 0px transparent;
-        border-right: 0px transparent;
-        border-top: 0px transparent;
-        border-bottom: 0px transparent;
     }
 }
