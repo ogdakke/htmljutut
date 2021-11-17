@@ -19,7 +19,7 @@
             <span class=" viivat_alas viiva6"></span>
         </div>
         <div class="echo-box">
-            <h1 id="echo-h1"><a href="https://danielew.com/"><!--#echo var="REQUEST_URI" --><br>not found.<br>click here to go the homepage.</a></h1>
+            <h1 id="echo-h1"><a href="https://danielew.com/">danielew.com<!--#echo var="REQUEST_URI" --><br>not found.<br>click here to go the homepage.</a></h1>
         </div>
     </main>
 </body>
