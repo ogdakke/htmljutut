@@ -55,7 +55,7 @@ a{
 
 h1{
     color: var(--text-primary);
-    font-weight: 700;
+    font-weight: 500;
     font-size: clamp(1.5rem, 5vw, 4.5rem);
 }
 
@@ -82,7 +82,6 @@ h1{
 	/* background: linear-gradient(-45deg, #6355a4, #6355a4, #e89a3e, #e89a3e); */
     background: linear-gradient(45deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
 	background-size: 500%;
-	text-transform: uppercase;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: animated_text 15s ease-in-out infinite;
