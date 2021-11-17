@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'ClashGrotesk-Variable';
+    src: url('nc_assets/fonts/ClashGrotesk-Variable.woff2') format('woff2'),
+         url('nc_assets/fonts/ClashGrotesk-Variable.woff') format('woff'),
+         url('nc_assets/fonts/ClashGrotesk-Variable.ttf') format('truetype');
+
+         font-weight: 200 700;
+         font-display: swap;
+         font-style: normal;
+  }
+
+:root{
+    font-size: 17px;
+
+    scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+    -webkit-scroll-padding-top: 1rem;
+    scroll-padding-top: 1rem;
+
+    --bg-primary: hsl(0, 0%, 11%);
+    --bg-secondary:hsl(0, 0%, 9%);
+    --text-primary: hsl(0, 0%, 85%);
+    --text-secondary: hsl(0, 0%, 97%);
+    --accent-color:rgb(235, 85, 51);
+    --grey1: hsl(30, 1%, 62%);
+
+    --x-gradient:linear-gradient(90deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
+    --y-gradient: linear-gradient(180deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
+    --y-gradient-inverted: linear-gradient(0,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
+    --shadow-primary:0px 0px 7px 3px rgba(0, 0, 0, 0.4);
+    --gradient-darken: linear-gradient(180deg, hsl(0, 0%, 11%, 0.1), hsl(0, 0%, 5%, 0.8));
+    --gradient-darken-over:linear-gradient(180deg, hsl(0, 0%, 5%, 0.8), hsl(0, 0%, 5%, 0.8));
+    
+    --widescreen-margin:0 15%;
+    font-family: 'ClashGrotesk-Variable';
+}
+
+body{
+    background-color: var(--bg-primary);
+}
+
+main{
+    display: grid;
+
+    grid-template-columns: repeat( 10, 10vw);
+    grid-template-rows: repeat( 10, 1fr);
+
+
+    height: 90vh;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1{
+    color: var(--text-primary);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 5vw, 4.5rem);
+}
+
+.echo-box{
+    display: flex;
+    box-sizing: border-box;
+
+    grid-column-start: 2;
+    grid-column-end: 10;
+
+    grid-row-start: 5;
+    grid-row-end: 6;
+
+    position: relative;
+    justify-content: center;
+    align-content: center;
+
+    text-align: center;
+    background: var(--bg-primary);
+}
+
+
+#echo-h1 {
+	/* background: linear-gradient(-45deg, #6355a4, #6355a4, #e89a3e, #e89a3e); */
+    background: linear-gradient(45deg,#ffbc57,#b5691a 23.44%,#703a43 48.96%,#823497 70.83%,#4799c1);
+	background-size: 500%;
+	text-transform: uppercase;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: animated_text 15s ease-in-out infinite;
+	-moz-animation: animated_text 15s ease-in-out infinite;
+	-webkit-animation: animated_text 15s ease-in-out infinite;
+}
+
+@keyframes animated_text {
+	0% { background-position: 0px 20%; }
+	50% { background-position: 100% 50%;}
+	100% { background-position: 0px 20%;}
+}
+
+
+/* viiva muotoilu */
+.viiva-wrapper {
+position: fixed;
+height: 100%;
+width: 100vw;
+top: 0;
+pointer-events: none;
+user-select: none;
+z-index: -1;
+}
+
+
+.viivat_alas{
+    display: block;
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--accent-color);
+}
+
+.viivat_alas.viiva1{
+    background-image: var(--y-gradient);
+    left: 6%;
+}
+
+.viivat_alas.viiva2{
+    left: 31%;
+}     
+
+.viivat_alas.viiva3{
+    background-image: var(--y-gradient-inverted);
+    left: 41%;
+}
+
+.viivat_alas.viiva4{
+    left: 55%;
+}
+
+.viivat_alas.viiva5{
+    left: 81%;
+}
+
+.viivat_alas.viiva6{
+    left: 94%;
+}
