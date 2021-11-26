@@ -272,11 +272,24 @@ h2{
 
 #img_box4{
     grid-area: img_box4;
-    background-image: url(nc_assets/kuvat/drive/lehti.jpg);
-    background-size: cover;
+    background-image: url(nc_assets/kuvat/wireframe_sphere_thick.svg);
+    background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
+    rotate: 10deg;
+    transition:  rotate(10deg);
 }
+
+#img_box4{
+    animation: background-sphere 1s ease-in;
+}
+
+@keyframes background-sphere {
+    100%{
+        rotate: 360deg;
+    }
+}
+
 #img_box4-text{
     grid-area: img_box4-text;
     margin-right: 1rem;
