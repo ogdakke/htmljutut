@@ -45,7 +45,7 @@ body{
     background-color: var(--bg-primary);
     margin: 0;
     padding: 0;
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 main{
@@ -272,12 +272,11 @@ h2{
 
 #img_box4{
     grid-area: img_box4;
+    background-color: var(--bg-primary);
     background-image: url(nc_assets/kuvat/wireframe_sphere_thick.svg);
     background-size: contain;
     background-position: right;
     background-repeat: no-repeat;
-    rotate: 10deg;
-    transition:  rotate(10deg);
 }
 
 #img_box4{
@@ -301,13 +300,19 @@ h2{
 
 #img_box5{
     grid-area: img_box5;
-    background-image: url(nc_assets/kuvat/drive/ikkuna.jpg);
-    background-size: cover;
+    background-color: var(--bg-primary);
+    background-image: url(nc_assets/kuvat/AnkeeLogo.svg);
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 #img_box5-text{
     grid-area: img_box5-text;
+    background-color: var(--bg-primary);
+    background-image: url(nc_assets/kuvat/tokyoCrop.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90%;
 }
 
 /* contact osion boxi */
@@ -851,7 +856,7 @@ textarea{
     .portfolio-container{
         height: auto;
         grid-template-columns: 1fr;
-        grid-template-rows: minmax(500px, 80vh) minmax(500px, 80vh) minmax(200px, 30vh) minmax(500px, 70vh) minmax(500px, 80vh) minmax(500px, 80vh) minmax(min-content, max-content);
+        grid-template-rows: minmax(500px, 80vh) minmax(500px, 80vh) minmax(200px, 30vh) minmax(500px, 70vh) minmax(500px, 80vh) minmax(500px, 80vh) minmax(350px, max-content);
 
         grid-template-areas: 
         "img_box1"
@@ -861,7 +866,7 @@ textarea{
         "img_box4"
         "img_box5"
         "img_box5-text";
-
+        
         row-gap: 2rem;
     }
 
