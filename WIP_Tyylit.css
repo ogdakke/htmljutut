@@ -189,12 +189,16 @@ h2{
 
 #box1{
     grid-area: box1;
-    background-image: var(--gradient-darken),url(nc_assets/kuvat/drive/profile.jpg);
+    background-image: var(--gradient-darken),url(nc_assets/kuvat/webP-kuvat/Profile.webp);
     box-shadow: var(--shadow-primary);
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
 }
+
+#img_profile{
+    
+}
+
 #box2{
     grid-area: box2;
 }
@@ -239,7 +243,7 @@ h2{
 
 #img_box1{
     grid-area: img_box1;
-    background-image: url(nc_assets/kuvat/drive/aatu1.jpg);
+    background-image: url(nc_assets/kuvat/webP-kuvat/aatu1.webp);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -250,7 +254,7 @@ h2{
 
 #img_box2{
     grid-area: img_box2;
-    background-image: url(nc_assets/kuvat/drive/Speed.jpg);
+    background-image: url(nc_assets/kuvat/webP-kuvat/Speed.webp);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -261,7 +265,7 @@ h2{
 
 #img_box3{
     grid-area: img_box3;
-    background-image: url(nc_assets/kuvat/drive/vesi.jpg);
+    background-image: url(nc_assets/kuvat/webP-kuvat/lehti.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -292,7 +296,7 @@ h2{
 #img_box4-text{
     grid-area: img_box4-text;
     margin-right: 1rem;
-    background-image: url(nc_assets/kuvat/drive/sumea_lehti.jpg);
+    background-image: url(nc_assets/kuvat/webP-kuvat/sumea_lehti.webP);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
