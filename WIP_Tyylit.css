@@ -296,7 +296,7 @@ h2{
 #img_box4-text{
     grid-area: img_box4-text;
     margin-right: 1rem;
-    background-image: url(nc_assets/kuvat/webP-kuvat/sumea_lehti.webP);
+    background-image: url(nc_assets/kuvat/webP-kuvat/sumea_lehti.webp);
     background-size: cover;
     background-position: right;
     background-repeat: no-repeat;
