@@ -192,13 +192,8 @@ h2{
     background-image: var(--gradient-darken),url(nc_assets/kuvat/webP-kuvat/Profile.webp);
     box-shadow: var(--shadow-primary);
     background-size: cover;
-
+    background-position: center;
 }
-
-#img_profile{
-    
-}
-
 #box2{
     grid-area: box2;
 }
