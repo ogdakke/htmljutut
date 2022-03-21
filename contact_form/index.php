@@ -5,35 +5,35 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Danielew</title>
-        <link rel="shortcut icon" href="nc_assets/kuvat/logo/dew.svg" type="image/svg">
-        <link rel="stylesheet" href="WIP_Tyylit.css">
+        <link rel="shortcut icon" href="../nc_assets/kuvat/logo/dew.svg" type="image/svg">
+        <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
     <nav class="navbar" id="navbar-id" title="navbar">
         <ul class="navbar-nav" title="List of navigation items">
             <li class="nav-item" title="Home">
-                <a href="https://danielew.com/#header1" class="nav-link">
+                <a href="../index.html/#header1" class="nav-link">
                     Home
                     <span class="link-text">Home</span>
                 </a>
             </li>
 
             <li class="nav-item" title="About">
-                <a href="https://danielew.com/#box1" class="nav-link" >
+                <a href="../index.html/#box1" class="nav-link" >
                     About
                     <span class="link-text">About</span>
                 </a>
             </li>
 
             <li class="nav-item" title="Portfolio">
-                <a href="https://danielew.com/#box3" class="nav-link">
+                <a href="../index.html/#box3" class="nav-link">
                     Portfolio
                     <span class="link-text">Portfolio</span>
                 </a>
             </li>
 
             <li class="nav-item" title="Contact">
-                <a href="https://danielew.com/#contact_box" class="nav-link">
+                <a href="../index.html/#contact_box" class="nav-link">
                     Contact
                     <span class="link-text">Contact</span>
                 </a>
@@ -41,7 +41,7 @@
             
             <li class="nav-item" title="DEW Logo">
                 <a href="#" class="nav-logo">
-                    <img src="nc_assets/kuvat/logo/Asset_2.svg" alt="logo" id="nav_logo">
+                    <img src="../nc_assets/kuvat/logo/Asset_2.svg" alt="logo" id="nav_logo">
                     <span class="link-text">Home</span>
                 </a>
             </li>      
@@ -55,7 +55,7 @@
         <div class="form-container">
             <h2 id="h2-form">Send me an email about anything.</h2>
             <div class="form-wrapper">
-                <form method="POST" action="email-algo.php" class="contact-form" style="opacity: 1;">
+                <form method="POST" action="index.php" class="contact-form" style="opacity: 1;">
                     <div class="form-name-lastname">
                         <label for="name" class="text-muted">First Name*</label>
                             <input type="text" class="form-input" name="name" placeholder="First Name" required="">
@@ -69,7 +69,7 @@
                     <input class="button" name="sendflag" type="submit" value="send">
                     <div class="php-hope" >
     <?php
-            $mail_to_send_to = "daniel.wargh1@gmail.com";
+            $mail_to_send_to = "dakkephone@gmail.com";
             $from_email = "daniel.wargh@danielew.com";
             $sendflag = $_REQUEST['sendflag'];    
             $name=$_REQUEST['name'];
@@ -92,6 +92,7 @@
                         $eitoimi = "Your message wasn't sent. Please check your email address.";
                         echo "<p style='color:white;'>" . $eitoimi . "</p>";
                 }
+            
         }
     ?>
                     </div>
